@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#090909">
+<title>JetDigitalPro · Dual-Engine SEO & GEO Content Growth Agency</title>
+<meta name="description" content="Rank #1 on Google and get cited by ChatGPT, Perplexity & Google AI Overviews. Data-driven, 100% human-edited SEO & GEO content.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Lexend:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   DESIGN SYSTEM & SCALE TOKENS (Ref: 1778u Desktop, 0.82px Tablet, 0.8px Mobile)
+   ========================================================================== */
+:root{
+  --u: calc(100vw / 1778);
+  --bg:        #090909;
+  --lime:      #83f34d;
+  --lime-ink:  #0b2400;
+  --white:     #ffffff;
+  --card:      #1b1b1b;
+  --card-ring: #232323;
+  --acc:       #131313;
+  --rule:      #2f2f2f;
+  --muted:     rgba(255,255,255,.78);
+  --col:       calc(var(--u) * 1224);
+}
+@supports (width: 1cqi){ :root{ --u: calc(100cqi / 1778); } }
+@media (min-width: 2200px){ :root{ --u: calc(2200px / 1778); } }
+@media (max-width: 1199.98px){ :root{ --u: 0.82px; --col: calc(100% - 64px); } }
+@media (max-width: 767.98px){  :root{ --u: 0.8px;  --col: calc(100% - 32px); } }
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ background:var(--bg); scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  margin:0; min-height:100vh;
+  background:var(--bg); color:var(--white);
+  font-family:'Figtree', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-weight:400; -webkit-font-smoothing:antialiased;
+  container-type:inline-size; overflow-x:clip;
+}
+a{ color:inherit; text-decoration:none; }
+button,input,select{ font:inherit; color:inherit; }
+button{ background:none; border:0; padding:0; cursor:pointer; }
+svg{ display:block; }
+:focus-visible{ outline:2px solid var(--lime); outline-offset:3px; }
+.sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+/* ==========================================================================
+   BACKGROUND GLOW & STEPPED LIGHT BARS (Pure CSS)
+   ========================================================================== */
+.page{ position:relative; isolation:isolate; min-height:100vh; display:flex; flex-direction:column; }
+.page::before{
+  content:""; position:absolute; z-index:-2; left:0; right:0; top:0; height:calc(var(--u) * 1240);
+  background:
+    radial-gradient(calc(var(--u) * 760) calc(var(--u) * 960) at 50% calc(var(--u) * 95),
+      #1d2e13 0%, #1b2d14 12%, #182811 24%, #13210f 40%, #0e180c 58%, #0b0f0a 76%, #090909 92%);
+  pointer-events:none;
+}
+.panel{
+  position:absolute; z-index:-1; top:0; left:0; right:0;
+  height:calc(var(--u) * 655); pointer-events:none; overflow:hidden;
+}
+.panel::before{
+  content:""; position:absolute; inset:0 0 auto; height:calc(var(--u) * 105);
+  background:linear-gradient(rgba(40,70,25,.24), rgba(40,70,25,0));
+}
+.bar{ position:absolute; top:0; height:var(--h); width:calc(var(--w) * 100% / 1778);
+  background:linear-gradient(var(--c), rgba(9,9,9,0)); }
+.bar.l{ left:calc(var(--x) * 100% / 1778); } .bar.r{ right:calc(var(--x) * 100% / 1778); }
+.b1{ --x:0;   --w:93; --h:calc(var(--u) * 430); --c:#2a4b1b; }
+.b2{ --x:93;  --w:80; --h:calc(var(--u) * 360); --c:#25451a; }
+.b3{ --x:173; --w:80; --h:calc(var(--u) * 288); --c:#253e18; }
+.b4{ --x:253; --w:80; --h:calc(var(--u) * 216); --c:#213616; }
+.b5{ --x:333; --w:84; --h:calc(var(--u) * 156); --c:#1d2f14; }
+.bar.r.b1{ --w:98; } .bar.r.b2{ --x:98; --w:80; } .bar.r.b3{ --x:178; --w:83; } .bar.r.b4{ --x:261; --w:80; } .bar.r.b5{ --x:341; --w:84; }
+
+/* ==========================================================================
+   FROSTED GLASS & NAVIGATION (6-Page GTM Architecture)
+   ========================================================================== */
+.glass{
+  background:rgba(255,255,255,.05);
+  -webkit-backdrop-filter:blur(calc(var(--u) * 18));
+          backdrop-filter:blur(calc(var(--u) * 18));
+  border:1px solid rgba(255,255,255,.16);
+}
+.nav{
+  position:sticky; top:calc(var(--u) * 18); z-index:40; display:flex; align-items:center;
+  height:calc(var(--u) * 58); margin-top:calc(var(--u) * 22); padding:0 calc(var(--u) * 96);
+  width:100%; max-width:calc(var(--u) * 1778); margin-inline:auto;
+}
+.brand{ display:flex; align-items:center; gap:calc(var(--u) * 12); }
+.brand svg{ width:calc(var(--u) * 36); height:calc(var(--u) * 36); flex:none; }
+.brand-name{ font-size:calc(var(--u) * 24); font-weight:700; letter-spacing:calc(var(--u) * -.4); line-height:1; }
+.brand-name span{ color:var(--lime); }
+
+.links{
+  position:absolute; left:50%; transform:translateX(-50%);
+  display:flex; align-items:center; gap:calc(var(--u) * 32); list-style:none; margin:0;
+  height:calc(var(--u) * 54); padding:0 calc(var(--u) * 32);
+  border-radius:calc(var(--u) * 13); border-color:rgba(255,255,255,.14);
+  background:rgba(15,15,15,.68);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 calc(var(--u) * 6) calc(var(--u) * 24) rgba(0,0,0,.35);
+}
+.links a{ font-size:calc(var(--u) * 16.5); font-weight:500; line-height:1; opacity:.92; transition:color .2s, opacity .2s; white-space:nowrap; }
+.links a:hover{ opacity:1; color:var(--lime); text-shadow:0 0 calc(var(--u) * 12) rgba(131,243,77,.4); }
+
+.actions{ margin-left:auto; display:flex; align-items:center; gap:calc(var(--u) * 14); }
+.region-pill{
+  display:inline-flex; align-items:center; gap:calc(var(--u) * 7);
+  height:calc(var(--u) * 46); padding:0 calc(var(--u) * 16);
+  border-radius:calc(var(--u) * 10); background:rgba(255,255,255,.04);
+  font-size:calc(var(--u) * 14.5); font-weight:500; color:var(--muted);
+  transition:border-color .2s, color .2s;
+}
+.region-pill:hover{ border-color:rgba(131,243,77,.5); color:#fff; }
+.region-dot{ width:calc(var(--u) * 8); height:calc(var(--u) * 8); border-radius:50%; background:var(--lime); box-shadow:0 0 8px var(--lime); }
+
+.btn{ display:inline-flex; align-items:center; justify-content:center; height:calc(var(--u) * 52); padding:0 calc(var(--u) * 22); border-radius:calc(var(--u) * 12); font-size:calc(var(--u) * 16.5); font-weight:600; line-height:1; white-space:nowrap; transition:transform .2s, box-shadow .2s, background-color .2s; }
+.btn-ghost{ border:1.4px solid rgba(131,243,77,.75); background:rgba(131,243,77,.06); color:#f4fff0; }
+.btn-ghost:hover{ background:rgba(131,243,77,.14); transform:translateY(-1px); }
+.btn-lime{ background:var(--lime); color:var(--lime-ink); box-shadow: inset 0 0 0 1px rgba(255,255,255,.25); }
+.btn-lime:hover{ transform:translateY(-1px); box-shadow: 0 0 calc(var(--u) * 28) rgba(131,243,77,.38); }
+.btn-white{ background:#fff; color:#090909; }
+.btn-white:hover{ transform:translateY(-1px); box-shadow: 0 8px 24px rgba(255,255,255,.16); }
+
+/* CSS-only Mobile Menu Toggle */
+.nav-toggle{ display:none; }
+.menu-btn{ display:none; }
+
+/* ==========================================================================
+   HERO SECTION (PAGE 1: DUAL-ENGINE HUB)
+   ========================================================================== */
+.hero{ text-align:center; padding-top:calc(var(--u) * 132); width:var(--col); margin:0 auto; }
+.eyebrow{
+  display:inline-flex; align-items:center; justify-content:center; gap:calc(var(--u) * 8);
+  padding:0 calc(var(--u) * 22); height:calc(var(--u) * 46); border-radius:999px;
+  font-size:calc(var(--u) * 16); font-weight:600; letter-spacing:calc(var(--u) * .3);
+  background:rgba(131,243,77,.11); border:1.3px solid rgba(168,245,130,.65);
+  color:#dcffd0;
+}
+h1{
+  margin:calc(var(--u) * 20) auto 0; max-width:calc(var(--u) * 980);
+  font-weight:800; font-size:calc(var(--u) * 62); line-height:calc(var(--u) * 74); letter-spacing:calc(var(--u) * -.4);
+}
+h1 span{ color:var(--lime); }
+.lede{
+  margin:calc(var(--u) * 18) auto 0; max-width:calc(var(--u) * 740);
+  font-size:calc(var(--u) * 18.5); line-height:calc(var(--u) * 30); color:var(--muted);
+}
+.hero-cta{
+  margin-top:calc(var(--u) * 32); display:flex; align-items:center; justify-content:center; gap:calc(var(--u) * 16); flex-wrap:wrap;
+}
+.trust-strip{
+  margin-top:calc(var(--u) * 56); padding:calc(var(--u) * 18) calc(var(--u) * 28);
+  border-radius:999px; display:inline-flex; align-items:center; gap:calc(var(--u) * 28); flex-wrap:wrap; justify-content:center;
+  background:rgba(255,255,255,.035); border:1px solid rgba(255,255,255,.09);
+  font-size:calc(var(--u) * 15); color:var(--muted);
+}
+.trust-strip strong{ color:#fff; font-weight:600; }
+.trust-sep{ width:1px; height:calc(var(--u) * 16); background:var(--rule); }
+
+/* ==========================================================================
+   SHARED SECTION LAYOUT & HEADINGS
+   ========================================================================== */
+.main-wrap{ width:var(--col); margin:0 auto; padding-bottom:calc(var(--u) * 120); }
+.sec{ margin-top:calc(var(--u) * 116); scroll-margin-top:calc(var(--u) * 100); }
+.sec-head{ text-align:center; max-width:calc(var(--u) * 760); margin:0 auto calc(var(--u) * 48); }
+.sec-tag{
+  display:inline-block; font-size:calc(var(--u) * 14); font-weight:600; text-transform:uppercase;
+  letter-spacing:calc(var(--u) * 1.4); color:var(--lime); margin-bottom:calc(var(--u) * 10);
+}
+h2{ margin:0; font-size:calc(var(--u) * 42); font-weight:800; line-height:calc(var(--u) * 50); letter-spacing:calc(var(--u) * -.3); }
+.sec-sub{ margin:calc(var(--u) * 12) 0 0; font-size:calc(var(--u) * 17); line-height:calc(var(--u) * 27); color:var(--muted); }
+
+/* ==========================================================================
+   MODULE 1: 4 ICP SOLUTIONS GRID (Adapted Pill Cards from Reference)
+   ========================================================================== */
+.cats{ display:grid; grid-template-columns:1fr 1fr; gap:calc(var(--u) * 24); }
+.cat{
+  display:flex; align-items:center; min-height:calc(var(--u) * 136); padding:calc(var(--u) * 18) calc(var(--u) * 28) calc(var(--u) * 18) calc(var(--u) * 18);
+  border-radius:999px; background:var(--card);
+  border:1px solid rgba(255,255,255,.07);
+  transition:border-color .22s, background-color .22s, transform .22s;
+}
+.cat:hover{ border-color:rgba(131,243,77,.45); background:#1f1f1f; transform:translateY(-2px); }
+.cat .ico{
+  width:calc(var(--u) * 96); height:calc(var(--u) * 96); flex:none; border-radius:50%;
+  background:var(--card-ring); display:grid; place-items:center;
+  border:1px solid rgba(131,243,77,.18);
+}
+.cat .ico svg{ width:calc(var(--u) * 44); height:calc(var(--u) * 44); }
+.cat .txt{ margin-left:calc(var(--u) * 24); text-align:left; }
+.cat b{ display:block; font-weight:600; font-size:calc(var(--u) * 22); line-height:calc(var(--u) * 28); }
+.cat small{ display:block; margin-top:calc(var(--u) * 5); font-size:calc(var(--u) * 15.5); line-height:calc(var(--u) * 22); color:var(--muted); }
+
+/* ==========================================================================
+   MODULE 2: COMPARISON TABLE (JetDigitalPro vs AI Mills vs Traditional)
+   ========================================================================== */
+.comp-box{
+  background:var(--card); border:1px solid rgba(255,255,255,.08);
+  border-radius:calc(var(--u) * 22); overflow-x:auto;
+}
+.comp-table{ width:100%; border-collapse:collapse; text-align:left; min-width:680px; }
+.comp-table th, .comp-table td{ padding:calc(var(--u) * 20) calc(var(--u) * 26); border-bottom:1px solid var(--rule); font-size:calc(var(--u) * 16); }
+.comp-table tr:last-child td{ border-bottom:0; }
+.comp-table th{ font-weight:700; font-size:calc(var(--u) * 17.5); background:rgba(255,255,255,.02); }
+.comp-table th.hl, .comp-table td.hl{ background:rgba(131,243,77,.07); border-left:1px solid rgba(131,243,77,.25); border-right:1px solid rgba(131,243,77,.25); }
+.comp-table th.hl{ color:var(--lime); }
+.badge-yes{ color:var(--lime); font-weight:600; }
+.badge-no{ color:rgba(255,255,255,.45); }
+
+/* ==========================================================================
+   MODULE 3: PRODUCTIZED PRICING & SERVICES (/services)
+   ========================================================================== */
+.pricing-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:calc(var(--u) * 24); align-items:stretch; }
+.p-card{
+  position:relative; display:flex; flex-direction:column;
+  background:var(--card); border:1px solid rgba(255,255,255,.08);
+  border-radius:calc(var(--u) * 22); padding:calc(var(--u) * 34) calc(var(--u) * 30);
+}
+.p-card.featured{
+  background:linear-gradient(180deg, rgba(131,243,77,.09) 0%, #1b1b1b 42%);
+  border:1.5px solid rgba(131,243,77,.65);
+  box-shadow:0 16px 48px rgba(0,0,0,.45);
+}
+.p-pill{
+  position:absolute; top:calc(var(--u) * -14); right:calc(var(--u) * 26);
+  background:var(--lime); color:var(--lime-ink); font-size:calc(var(--u) * 13); font-weight:700;
+  padding:calc(var(--u) * 5) calc(var(--u) * 14); border-radius:999px;
+}
+.p-tier{ font-size:calc(var(--u) * 21); font-weight:700; }
+.p-desc{ margin:calc(var(--u) * 8) 0 0; font-size:calc(var(--u) * 15); color:var(--muted); line-height:1.5; }
+.p-price{ margin:calc(var(--u) * 24) 0; padding:calc(var(--u) * 18) 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+.p-price strong{ font-size:calc(var(--u) * 38); font-weight:800; letter-spacing:-.5px; }
+.p-price span{ font-size:calc(var(--u) * 15); color:var(--muted); }
+.p-list{ list-style:none; padding:0; margin:0 0 calc(var(--u) * 28); display:flex; flex-direction:column; gap:calc(var(--u) * 13); flex:1; }
+.p-list li{ display:flex; align-items:flex-start; gap:calc(var(--u) * 10); font-size:calc(var(--u) * 15.5); color:rgba(255,255,255,.9); line-height:1.45; }
+.p-list li::before{ content:"✓"; color:var(--lime); font-weight:800; flex:none; }
+.p-card .btn{ width:100%; }
+
+/* ==========================================================================
+   MODULE 4: WHITE-LABEL AGENCY PARTNER BANNER (/white-label)
+   ========================================================================== */
+.wl-banner{
+  display:grid; grid-template-columns:1.25fr 1fr; gap:calc(var(--u) * 36); align-items:center;
+  background:linear-gradient(135deg, #182313 0%, #141414 60%);
+  border:1px solid rgba(131,243,77,.28); border-radius:calc(var(--u) * 24);
+  padding:calc(var(--u) * 44);
+}
+.wl-specs{ display:grid; grid-template-columns:1fr 1fr; gap:calc(var(--u) * 16); }
+.wl-stat{
+  background:rgba(0,0,0,.38); border:1px solid rgba(255,255,255,.08);
+  border-radius:calc(var(--u) * 16); padding:calc(var(--u) * 20);
+}
+.wl-stat b{ display:block; font-size:calc(var(--u) * 24); font-weight:800; color:var(--lime); }
+.wl-stat span{ display:block; margin-top:calc(var(--u) * 4); font-size:calc(var(--u) * 14.5); color:var(--muted); }
+
+/* ==========================================================================
+   MODULE 5: INTERACTIVE CASE STUDIES & AI CITATION PROOF (/case-studies)
+   ========================================================================== */
+.proof-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:calc(var(--u) * 24); }
+.proof-card{
+  background:var(--card); border:1px solid rgba(255,255,255,.08);
+  border-radius:calc(var(--u) * 20); padding:calc(var(--u) * 28);
+  display:flex; flex-direction:column; gap:calc(var(--u) * 18);
+}
+.proof-niche{
+  align-self:flex-start; font-size:calc(var(--u) * 13); font-weight:600;
+  padding:calc(var(--u) * 5) calc(var(--u) * 12); border-radius:999px;
+  background:rgba(255,255,255,.07); color:#fff;
+}
+.proof-metric{ font-size:calc(var(--u) * 40); font-weight:800; color:var(--lime); line-height:1.1; }
+.proof-title{ font-size:calc(var(--u) * 19); font-weight:600; line-height:1.4; }
+.ai-citation-box{
+  margin-top:auto; background:#111; border:1px solid var(--rule);
+  border-radius:calc(var(--u) * 12); padding:calc(var(--u) * 14);
+  font-size:calc(var(--u) * 13.5); color:var(--muted); line-height:1.5;
+}
+.ai-citation-box strong{ display:block; color:#fff; font-size:calc(var(--u) * 13); margin-bottom:calc(var(--u) * 4); }
+
+/* ==========================================================================
+   MODULE 6: GEO KNOWLEDGE HUB & PURE-CSS ACCORDION (/geo-hub)
+   ========================================================================== */
+.search-bar{
+  display:flex; align-items:center; height:calc(var(--u) * 70); border-radius:999px;
+  padding:0 calc(var(--u) * 28); margin-bottom:calc(var(--u) * 32);
+  background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.24);
+  -webkit-backdrop-filter:blur(calc(var(--u) * 20)); backdrop-filter:blur(calc(var(--u) * 20));
+}
+.search-bar svg{ width:calc(var(--u) * 22); height:calc(var(--u) * 22); flex:none; }
+.search-bar input{
+  flex:1; min-width:0; height:100%; margin-left:calc(var(--u) * 14); background:none; border:0; outline:none;
+  font-family:'Lexend', 'Figtree', sans-serif; font-weight:300; font-size:calc(var(--u) * 15.5);
+}
+.search-bar input::placeholder{ color:rgba(255,255,255,.85); }
+.search-bar:focus-within{ border-color:var(--lime); box-shadow:0 0 0 4px rgba(131,243,77,.14); }
+
+.acc{ display:flex; flex-direction:column; gap:calc(var(--u) * 16); }
+details.acc-item{
+  background:var(--acc); border:1px solid rgba(255,255,255,.06);
+  border-radius:calc(var(--u) * 14); overflow:hidden; transition:border-color .2s;
+}
+details.acc-item[open]{ border-color:rgba(131,243,77,.35); }
+details.acc-item summary{
+  list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between;
+  min-height:calc(var(--u) * 78); padding:calc(var(--u) * 18) calc(var(--u) * 28);
+  font-size:calc(var(--u) * 21); font-weight:600; line-height:1.35;
+}
+details.acc-item summary::-webkit-details-marker{ display:none; }
+details.acc-item summary:hover{ background:#181818; }
+details.acc-item summary svg{ width:calc(var(--u) * 20); height:calc(var(--u) * 20); flex:none; margin-left:16px; transition:transform .25s; }
+details.acc-item[open] summary svg{ transform:rotate(180deg); stroke:var(--lime); }
+.acc-body{
+  padding:0 calc(var(--u) * 28) calc(var(--u) * 24);
+  font-size:calc(var(--u) * 16); line-height:1.65; color:var(--muted);
+  border-top:1px solid rgba(255,255,255,.06); padding-top:calc(var(--u) * 18);
+}
+
+/* ==========================================================================
+   MODULE 7: FREE SAMPLE LEAD MAGNET FORM (/free-sample)
+   ========================================================================== */
+.lead-box{
+  display:grid; grid-template-columns:1fr 1.1fr; gap:calc(var(--u) * 44); align-items:center;
+  background:var(--card); border:1px solid rgba(131,243,77,.35);
+  border-radius:calc(var(--u) * 26); padding:calc(var(--u) * 48);
+  box-shadow:0 24px 64px rgba(0,0,0,.55);
+}
+.lead-perks{ list-style:none; padding:0; margin:calc(var(--u) * 24) 0 0; display:flex; flex-direction:column; gap:calc(var(--u) * 14); }
+.lead-perks li{ display:flex; align-items:center; gap:calc(var(--u) * 12); font-size:calc(var(--u) * 16); color:rgba(255,255,255,.92); }
+.lead-perks li span{ width:24px; height:24px; border-radius:50%; background:rgba(131,243,77,.15); color:var(--lime); display:grid; place-items:center; font-weight:700; font-size:13px; flex:none; }
+
+.lead-form{ display:flex; flex-direction:column; gap:calc(var(--u) * 16); background:#121212; padding:calc(var(--u) * 32); border-radius:calc(var(--u) * 18); border:1px solid var(--rule); }
+.f-row{ display:grid; grid-template-columns:1fr 1fr; gap:calc(var(--u) * 14); }
+.f-group{ display:flex; flex-direction:column; gap:calc(var(--u) * 7); }
+.f-group label{ font-size:calc(var(--u) * 14); font-weight:500; color:var(--muted); }
+.f-group input, .f-group select{
+  height:calc(var(--u) * 50); padding:0 calc(var(--u) * 16);
+  border-radius:calc(var(--u) * 11); background:#1b1b1b; border:1px solid var(--rule);
+  font-size:calc(var(--u) * 15); color:#fff; outline:none; transition:border-color .2s;
+}
+.f-group input:focus, .f-group select:focus{ border-color:var(--lime); }
+.lead-form .btn-lime{ height:calc(var(--u) * 56); font-size:calc(var(--u) * 17); margin-top:calc(var(--u) * 6); width:100%; }
+.form-note{ font-size:calc(var(--u) * 13); color:var(--muted); text-align:center; margin:0; }
+
+/* ==========================================================================
+   FOOTER (Multi-Region Ecosystem: Global + jasa-seo.id)
+   ========================================================================== */
+.footer{
+  border-top:1px solid var(--rule); padding:calc(var(--u) * 48) 0;
+  width:var(--col); margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;
+  font-size:calc(var(--u) * 15); color:var(--muted);
+}
+.footer-links{ display:flex; gap:calc(var(--u) * 24); flex-wrap:wrap; }
+.footer-links a:hover{ color:var(--lime); }
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (Tablet <=1199px, Mobile <=767px)
+   ========================================================================== */
+@media (max-width: 1199.98px){
+  .nav{ padding:0 32px; height:54px; margin-top:18px; }
+  .links, .actions .region-pill, .actions .btn-ghost{ display:none; }
+  .menu-btn{
+    display:grid; place-items:center; width:46px; height:46px; border-radius:11px;
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.18); cursor:pointer;
+  }
+  .menu-btn svg{ width:20px; height:20px; }
+  .nav-toggle:checked ~ .links{
+    display:flex; position:absolute; left:auto; right:32px; top:calc(100% + 10px); transform:none;
+    flex-direction:column; align-items:stretch; height:auto; width:280px; padding:12px; gap:4px;
+    background:rgba(16,22,13,.94); border:1px solid rgba(131,243,77,.3);
+  }
+  .nav-toggle:checked ~ .links a{ padding:12px 14px; border-radius:8px; }
+  .nav-toggle:checked ~ .links a:hover{ background:rgba(255,255,255,.06); }
+  .pricing-grid, .proof-grid{ grid-template-columns:1fr; }
+  .wl-banner, .lead-box{ grid-template-columns:1fr; }
+}
+@media (max-width: 899.98px){
+  .cats{ grid-template-columns:1fr; }
+}
+@media (max-width: 767.98px){
+  .nav{ padding:0 16px; margin-top:14px; }
+  .btn-lime{ height:44px; padding:0 16px; font-size:14px; }
+  .hero{ padding-top:68px; }
+  h1{ font-size:clamp(32px, 9.5vw, 46px); line-height:1.14; }
+  .lede{ font-size:15.5px; line-height:1.6; }
+  h2{ font-size:clamp(26px, 7.5vw, 34px); line-height:1.2; }
+  .cat{ border-radius:24px; height:auto; padding:18px; }
+  .cat .ico{ width:64px; height:64px; }
+  .cat .ico svg{ width:30px; height:30px; }
+  .f-row, .wl-specs{ grid-template-columns:1fr; }
+  .wl-banner, .lead-box, .lead-form{ padding:24px 18px; }
+  details.acc-item summary{ font-size:17px; min-height:64px; padding:14px 18px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <!-- Static Stepped Green Light Bars -->
+  <div class="panel" aria-hidden="true">
+    <i class="bar l b1"></i><i class="bar l b2"></i><i class="bar l b3"></i><i class="bar l b4"></i><i class="bar l b5"></i>
+    <i class="bar r b1"></i><i class="bar r b2"></i><i class="bar r b3"></i><i class="bar r b4"></i><i class="bar r b5"></i>
+  </div>
+
+  <!-- Sticky Frosted-Glass Navigation -->
+  <nav class="nav" aria-label="Primary Navigation">
+    <a class="brand" href="#top" aria-label="JetDigitalPro Home">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect width="40" height="40" rx="10" fill="#83F34D" fill-opacity="0.14" stroke="#83F34D" stroke-width="1.5"/>
+        <path d="M12 24L20 12L28 24H22.5L20 19.5L17.5 24H12Z" fill="#83F34D"/>
+        <circle cx="20" cy="27.5" r="2.2" fill="#FFFFFF"/>
+      </svg>
+      <div class="brand-name">JetDigital<span>Pro</span></div>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <ul class="links glass">
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#pricing">Pricing &amp; Packages</a></li>
+      <li><a href="#white-label">White-Label</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#geo-hub">GEO Hub</a></li>
+    </ul>
+
+    <div class="actions">
+      <a class="region-pill glass" href="#free-sample" title="Global (EN) & Indonesia (jasa-seo.id)">
+        <span class="region-dot"></span>
+        <span>Global (EN) · ID</span>
+      </a>
+      <a class="btn btn-ghost" href="#white-label">Agency Login</a>
+      <a class="btn btn-lime" href="#free-sample">Claim Free Sample</a>
+      <label for="nav-toggle" class="menu-btn" aria-label="Toggle navigation menu">
+        <svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+      </label>
+    </div>
+  </nav>
+
+  <!-- PAGE 1: HERO SECTION (DUAL-ENGINE HUB) -->
+  <header class="hero" id="top">
+    <span class="eyebrow">DUAL-ENGINE SEO &amp; GEO CONTENT AGENCY</span>
+    <h1>Rank #1 on Google and Get Cited by <span>ChatGPT &amp; AI Search</span></h1>
+    <p class="lede">We build data-backed topical authority and 100% human-edited content engines that capture search traffic and earn brand citations inside ChatGPT, Perplexity, and Google AI Overviews.</p>
+    <div class="hero-cta">
+      <a class="btn btn-lime" href="#free-sample">Get Your Free Sample Article</a>
+      <a class="btn btn-white" href="#case-studies">View Verified Case Studies</a>
+    </div>
+    <div class="trust-strip">
+      <span><strong>4.9/5</strong> Verified Client Rating</span>
+      <i class="trust-sep"></i>
+      <span><strong>100%</strong> Human Editorial QA</span>
+      <i class="trust-sep"></i>
+      <span><strong>5–7 Days</strong> SLA Turnaround</span>
+      <i class="trust-sep"></i>
+      <span>Global &amp; Indonesia (<strong>jasa-seo.id</strong>)</span>
+    </div>
+  </header>
+
+  <main class="main-wrap">
+    <!-- MODULE 1: 4 ICP SOLUTIONS GRID (Adapted Pill Cards) -->
+    <section class="sec" id="solutions">
+      <div class="sec-head">
+        <span class="sec-tag">Tailored Growth Tracks</span>
+        <h2>Built for Brands, SaaS &amp; SEO Agencies</h2>
+        <p class="sec-sub">Select the content growth architecture designed around your internal capacity and market targets.</p>
+      </div>
+      <div class="cats">
+        <a class="cat" href="#pricing">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#83F34D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+          <span class="txt"><b>Hands-Off Blog Retainer</b><small>End-to-end keyword clustering, writing, human editing, and direct CMS publishing for B2B &amp; SaaS.</small></span>
+        </a>
+        <a class="cat" href="#white-label">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#83F34D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <span class="txt"><b>White-Label Agency Partner</b><small>Unbranded, NDA-protected bulk content production with AI citation reporting for digital agencies.</small></span>
+        </a>
+        <a class="cat" href="#free-sample">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#83F34D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+          <span class="txt"><b>GEO &amp; AI Citation Optimization</b><small>Entity mapping, answer-led formatting, and JSON-LD schema so LLMs recommend your brand.</small></span>
+        </a>
+        <a class="cat" href="#geo-hub">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#83F34D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+          <span class="txt"><b>Topical Authority &amp; Local SEO</b><small>Full semantic cluster blueprints for global domains and Indonesian SMEs via jasa-seo.id.</small></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- MODULE 2: COMPARISON MATRIX -->
+    <section class="sec" aria-label="Agency Comparison">
+      <div class="sec-head">
+        <span class="sec-tag">Why JetDigitalPro</span>
+        <h2>Engineered for the AI Search Era</h2>
+      </div>
+      <div class="comp-box">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Capability &amp; Quality Standard</th>
+              <th class="hl">JetDigitalPro (Dual-Engine)</th>
+              <th>Cheap AI Content Mills</th>
+              <th>Traditional SEO Agencies</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Google SEO + AI Search (GEO) Optimization</td>
+              <td class="hl"><span class="badge-yes">✓ Built-In Dual Optimization</span></td>
+              <td><span class="badge-no">✕ Raw unedited LLM output</span></td>
+              <td><span class="badge-no">△ Legacy keyword density only</span></td>
+            </tr>
+            <tr>
+              <td>Editorial &amp; Fact-Checking Process</td>
+              <td class="hl"><span class="badge-yes">✓ 100% Senior Human Editors</span></td>
+              <td><span class="badge-no">✕ Zero human verification</span></td>
+              <td><span class="badge-yes">✓ Human writers (slow)</span></td>
+            </tr>
+            <tr>
+              <td>Entity &amp; Schema Markup Readiness</td>
+              <td class="hl"><span class="badge-yes">✓ JSON-LD &amp; Answer-Led H2s</span></td>
+              <td><span class="badge-no">✕ Plain text walls</span></td>
+              <td><span class="badge-no">△ Extra technical fee</span></td>
+            </tr>
+            <tr>
+              <td>Delivery Turnaround &amp; Risk-Free Trial</td>
+              <td class="hl"><span class="badge-yes">✓ 5–7 Days + Free Sample</span></td>
+              <td><span class="badge-yes">✓ Instant (High penalty risk)</span></td>
+              <td><span class="badge-no">✕ 3–6 Weeks + High retainer</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PAGE 2: PRODUCTIZED PRICING & PACKAGES (/services) -->
+    <section class="sec" id="pricing">
+      <div class="sec-head">
+        <span class="sec-tag">Transparent Productized Pricing</span>
+        <h2>Predictable Content Growth Packages</h2>
+        <p class="sec-sub">No bloated agency overhead. Start with a single test batch or scale with a fully managed monthly retainer.</p>
+      </div>
+      <div class="pricing-grid">
+        <article class="p-card">
+          <div class="p-tier">Starter Pack (On-Demand)</div>
+          <p class="p-desc">Ideal for validating content quality or covering targeted bottom-of-funnel keywords.</p>
+          <div class="p-price"><strong>$149</strong> <span>/ article (1,500+ words)</span></div>
+          <ul class="p-list">
+            <li>SERP &amp; AI Overview intent research</li>
+            <li>Answer-led structure for ChatGPT &amp; Perplexity</li>
+            <li>100% Senior Human Editorial QA</li>
+            <li>Custom JSON-LD FAQ &amp; Article Schema</li>
+            <li>5-business-day delivery SLA</li>
+          </ul>
+          <a class="btn btn-ghost" href="#free-sample">Test With Free Sample</a>
+        </article>
+
+        <article class="p-card featured">
+          <span class="p-pill">MOST POPULAR</span>
+          <div class="p-tier">Growth Retainer (Hands-Off)</div>
+          <p class="p-desc">Complete topical authority engine for B2B, SaaS, and high-growth digital brands.</p>
+          <div class="p-price"><strong>$1,890</strong> <span>/ month (16 articles)</span></div>
+          <ul class="p-list">
+            <li>Full 90-day Topical Authority &amp; Entity Map</li>
+            <li>16 Dual-Engine SEO + GEO articles / month</li>
+            <li>Direct CMS publishing (WordPress / Webflow / Sanity)</li>
+            <li>Internal linking &amp; custom visual infographics</li>
+            <li>Monthly Google Rank + AI Citation tracking report</li>
+          </ul>
+          <a class="btn btn-lime" href="#free-sample">Start With Free Sample</a>
+        </article>
+
+        <article class="p-card">
+          <div class="p-tier">Enterprise &amp; Agency Bulk</div>
+          <p class="p-desc">High-volume production for multi-domain portfolios and white-label agency partners.</p>
+          <div class="p-price"><strong>Custom</strong> <span>/ 30–100+ articles</span></div>
+          <ul class="p-list">
+            <li>Dedicated Managing Editor &amp; Slack channel</li>
+            <li>Strict NDA &amp; unbranded White-Label deliverables</li>
+            <li>Multi-language support (English &amp; Bahasa Indonesia)</li>
+            <li>Priority 72-hour rush turnaround option</li>
+            <li>Volume discounts up to 30% off standard rates</li>
+          </ul>
+          <a class="btn btn-white" href="#white-label">Request Agency Rate Card</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- PAGE 3: WHITE-LABEL AGENCY PARTNER (/white-label) -->
+    <section class="sec" id="white-label">
+      <div class="wl-banner">
+        <div>
+          <span class="sec-tag">For SEO &amp; Digital Agencies</span>
+          <h2>Scale Your Agency Fulfillment Without Hiring In-House</h2>
+          <p class="sec-sub">Deliver cutting-edge GEO &amp; SEO content under your own brand. We operate invisibly behind strict NDAs with predictable margins and zero editorial headaches.</p>
+          <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn btn-lime" href="#free-sample">Request White-Label Sample</a>
+            <a class="btn btn-ghost" href="#case-studies">See Agency Results</a>
+          </div>
+        </div>
+        <div class="wl-specs">
+          <div class="wl-stat"><b>100% NDA</b><span>Strict client confidentiality &amp; unbranded docs</span></div>
+          <div class="wl-stat"><b>5–7 Days</b><span>Guaranteed SLA turnaround for client sprints</span></div>
+          <div class="wl-stat"><b>GEO Ready</b><span>AI citation reports you can present to clients</span></div>
+          <div class="wl-stat"><b>2 Regions</b><span>Global English &amp; local Indonesian fulfillment</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: INTERACTIVE CASE STUDIES & AI CITATION PROOF (/case-studies) -->
+    <section class="sec" id="case-studies">
+      <div class="sec-head">
+        <span class="sec-tag">Verified Proof Hub</span>
+        <h2>Real Rankings &amp; Live AI Search Citations</h2>
+        <p class="sec-sub">Measurable organic traffic expansion paired with verified brand mentions inside generative engines.</p>
+      </div>
+      <div class="proof-grid">
+        <article class="proof-card">
+          <span class="proof-niche">B2B FinTech SaaS</span>
+          <div class="proof-metric">+312%</div>
+          <div class="proof-title">Organic Non-Branded Traffic &amp; 48 Top-3 Google Keywords in 5 Months</div>
+          <div class="ai-citation-box">
+            <strong>AI Citation Verified (ChatGPT &amp; Perplexity):</strong>
+            Cited as #1 recommended platform for "automated treasury reconciliation software" across 14 commercial prompts.
+          </div>
+        </article>
+        <article class="proof-card">
+          <span class="proof-niche">Health &amp; Wellness E-Commerce</span>
+          <div class="proof-metric">4.4x ROI</div>
+          <div class="proof-title">64 Topical Cluster Articles Driving $42k/mo in Organic Pipeline</div>
+          <div class="ai-citation-box">
+            <strong>AI Citation Verified (Google AI Overviews):</strong>
+            Featured directly in Google AI Overview source cards for 29 high-intent buyer comparison queries.
+          </div>
+        </article>
+        <article class="proof-card">
+          <span class="proof-niche">Local Enterprise (Indonesia)</span>
+          <div class="proof-metric">+240%</div>
+          <div class="proof-title">Qualified B2B Leads via Dual-Language Authority Hub (jasa-seo.id)</div>
+          <div class="ai-citation-box">
+            <strong>AI Citation Verified (Gemini &amp; ChatGPT):</strong>
+            Primary cited source for regional B2B logistics and compliance queries in Bahasa Indonesia.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PAGE 6: GEO KNOWLEDGE HUB & ACCORDION (/geo-hub) -->
+    <section class="sec" id="geo-hub">
+      <div class="sec-head">
+        <span class="sec-tag">GEO Knowledge Hub</span>
+        <h2>Frequently Asked Questions</h2>
+        <p class="sec-sub">Everything you need to know about Dual-Engine SEO, Generative Engine Optimization, and our editorial workflow.</p>
+      </div>
+
+      <label class="search-bar" for="faq-search">
+        <svg viewBox="0 0 25 25" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><circle cx="10.9" cy="10.9" r="9.8"/><path d="M18.2 18.2 23.6 23.6"/></svg>
+        <span class="sr-only">Search Knowledge Hub</span>
+        <input id="faq-search" type="search" placeholder="Search GEO, AI citations, human editing, white-label NDA..." disabled title="Interactive search enabled in Phase 1 JS bundle">
+      </label>
+
+      <div class="acc">
+        <details class="acc-item" open>
+          <summary>What is the difference between traditional SEO and GEO (Generative Engine Optimization)?<svg viewBox="0 0 18 18" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 6.8 9 11.2l4.5-4.4"/></svg></summary>
+          <div class="acc-body">Traditional SEO focuses on ranking links on Google's search results page. GEO optimizes content structure, entity relationships, statistical citations, and JSON-LD schema so large language models (ChatGPT, Perplexity, Claude, and Google AI Overviews) directly quote and recommend your brand in synthesized answers.</div>
+        </details>
+        <details class="acc-item">
+          <summary>How does JetDigitalPro ensure content passes Google Spam policies?<svg viewBox="0 0 18 18" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 6.8 9 11.2l4.5-4.4"/></svg></summary>
+          <div class="acc-body">We never publish raw AI text. Every article undergoes deep SERP gap research, original data enrichment, and line-by-line rewriting by niche-specialized human editors to satisfy Google's E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) guidelines.</div>
+        </details>
+        <details class="acc-item">
+          <summary>How does the Free Sample Article offer work?<svg viewBox="0 0 18 18" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 6.8 9 11.2l4.5-4.4"/></svg></summary>
+          <div class="acc-body">Submit your website URL and target topic in the form below. Within 2–3 business days, our editorial team delivers a custom-researched, publication-ready sample article tailored to your domain—completely free with zero obligation.</div>
+        </details>
+        <details class="acc-item">
+          <summary>Do you support both global English markets and local Indonesian businesses?<svg viewBox="0 0 18 18" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 6.8 9 11.2l4.5-4.4"/></svg></summary>
+          <div class="acc-body">Yes. Our global team serves North America, Europe, and APAC via JetDigitalPro.com, while our dedicated Indonesian division (jasa-seo.id) delivers native Bahasa Indonesia SEO &amp; GEO campaigns tailored to local search intent.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- PAGE 5: FREE SAMPLE LEAD MAGNET FORM (/free-sample) -->
+    <section class="sec" id="free-sample">
+      <div class="lead-box">
+        <div>
+          <span class="sec-tag">Zero-Risk Proof of Quality</span>
+          <h2>Claim Your Free Custom GEO + SEO Sample Article</h2>
+          <p class="sec-sub">Experience our editorial depth and AI-citation structure on your own domain before spending a single dollar.</p>
+          <ul class="lead-perks">
+            <li><span>1</span>Custom keyword &amp; AI prompt gap audit for your URL</li>
+            <li><span>2</span>1,200+ word human-edited, publish-ready draft</li>
+            <li><span>3</span>Delivered to your inbox in 2–3 business days</li>
+          </ul>
+        </div>
+
+        <form class="lead-form" action="#free-sample" method="post">
+          <div class="f-row">
+            <div class="f-group">
+              <label for="f-name">Your Name *</label>
+              <input id="f-name" name="name" type="text" placeholder="e.g. Alex Rivera" required>
+            </div>
+            <div class="f-group">
+              <label for="f-email">Work Email *</label>
+              <input id="f-email" name="email" type="email" placeholder="alex@company.com" required>
+            </div>
+          </div>
+          <div class="f-group">
+            <label for="f-url">Website Domain URL *</label>
+            <input id="f-url" name="domain" type="url" placeholder="https://yourcompany.com" required>
+          </div>
+          <div class="f-row">
+            <div class="f-group">
+              <label for="f-segment">Account Profile</label>
+              <select id="f-segment" name="segment">
+                <option value="brand">Brand / SaaS / B2B</option>
+                <option value="agency">Digital / SEO Agency (White-Label)</option>
+                <option value="local-id">UMKM / Bisnis Lokal (Indonesia)</option>
+              </select>
+            </div>
+            <div class="f-group">
+              <label for="f-topic">Target Topic or Keyword</label>
+              <input id="f-topic" name="topic" type="text" placeholder="e.g. B2B cloud security">
+            </div>
+          </div>
+          <button class="btn btn-lime" type="submit">Send My Free Sample Article →</button>
+          <p class="form-note">No credit card required · Protected by Cloudflare Turnstile &amp; Strict NDA</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>© 2026 <strong>JetDigitalPro</strong> (JDPX Ventures). All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#solutions">Solutions</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#white-label">White-Label NDA</a>
+      <a href="#case-studies">Case Studies</a>
+      <a href="https://www.jasa-seo.id/" target="_blank" rel="noopener">Indonesia (jasa-seo.id)</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
+"""
+
+with open("prototype_gtm_jetdigitalpro.html", "w", encoding="utf-8") as f:
+    f.write(html_code)
+
+print("Saved successfully. Size:", len(html_code))

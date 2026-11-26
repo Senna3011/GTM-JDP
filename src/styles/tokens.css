@@ -1,0 +1,17 @@
+/* GTM Design Tokens — JetDigitalPro
+   --u responsive scale system preserved per Agent Rules */
+:root {
+  --u: calc(100vw / 1778);
+  --bg: #090909;
+  --lime: #83F34D;
+  --lime-ink: #0B2400;
+  --card: #1B1B1B;
+  --acc: #131313;
+  --rule: #2F2F2F;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  :root { --u: 0.82px; }
+}
+@media (max-width: 767px) {
+  :root { --u: 0.8px; }
+}

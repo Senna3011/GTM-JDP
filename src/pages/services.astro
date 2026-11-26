@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout>
+  <div class="page">
+    <div class="panel" aria-hidden="true">
+      <i class="bar l b1"></i><i class="bar l b2"></i><i class="bar l b3"></i><i class="bar l b4"></i><i class="bar l b5"></i>
+      <i class="bar r b1"></i><i class="bar r b2"></i><i class="bar r b3"></i><i class="bar r b4"></i><i class="bar r b5"></i>
+    </div>
+    <Navbar />
+    <main class="main-wrap">
+      <section class="sec" id="services">
+        <div class="sec-head">
+          <span class="sec-tag">Transparent Productized Pricing</span>
+          <h2>Predictable Content Growth Packages</h2>
+          <p class="sec-sub">No bloated agency overhead. Start with a single test batch or scale with a fully managed monthly retainer.</p>
+        </div>
+        <div class="pricing-grid" id="pricing-grid">
+          <article class="p-card"><div class="p-tier">Starter Pack (On-Demand)</div><p class="p-desc">Ideal for validating content quality.</p><div class="p-price"><strong>$149</strong> <span>/ article</span></div><ul class="p-list"><li>SERP &amp; AI Overview intent research</li><li>100% Senior Human Editorial QA</li><li>5-business-day delivery SLA</li></ul><a class="btn btn-ghost" href="/free-sample">Order Starter Pack</a></article>
+          <article class="p-card featured"><span class="p-pill">MOST POPULAR</span><div class="p-tier">Growth Retainer (Hands-Off)</div><p class="p-desc">Complete topical authority engine.</p><div class="p-price"><strong>$1,890</strong> <span>/ month (8–16 articles)</span></div><ul class="p-list"><li>Full Topical Authority Map</li><li>Entity &amp; JSON-LD Schema</li><li>Direct CMS publishing</li><li>Monthly rank + AI citation report</li></ul><a class="btn btn-lime" href="/free-sample">Start Growth Plan</a></article>
+          <article class="p-card"><div class="p-tier">Enterprise &amp; Agency Bulk</div><p class="p-desc">High-volume for multi-domain portfolios.</p><div class="p-price"><strong>Custom</strong> <span>/ 30+ articles</span></div><ul class="p-list"><li>Dedicated Account Manager</li><li>Multi-domain support</li><li>Volume discounts</li></ul><a class="btn btn-white" href="/free-sample">Request Custom Quote</a></article>
+        </div>
+      </section>
+      <section class="sec" id="estimator">
+        <div class="sec-head"><span class="sec-tag">Volume Estimator</span><h2>Estimate Your Monthly Plan</h2></div>
+        <div class="lead-box">
+          <div>
+            <div class="f-group"><label for="est-qty">Articles per month</label><input id="est-qty" type="number" min="1" value="8" /></div>
+            <div class="f-group"><label for="est-tier">Package</label><select id="est-tier"><option value="149">Starter ($149/article)</option><option value="118">Growth (est. $118/article)</option></select></div>
+          </div>
+          <div><p class="proof-metric" id="est-total">$0</p><p class="sec-sub" id="est-delivery">Estimated delivery: —</p></div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </div>
+  <script is:inline>
+    const qty = document.getElementById('est-qty');
+    const tier = document.getElementById('est-tier');
+    const total = document.getElementById('est-total');
+    const delivery = document.getElementById('est-delivery');
+    function calc() {
+      const q = Math.max(1, parseInt(qty.value || '1', 10));
+      const price = parseFloat(tier.value);
+      total.textContent = '$' + (q * price).toLocaleString();
+      delivery.textContent = 'Estimated delivery: ' + (q <= 8 ? '5–7 business days' : '7–10 business days');
+    }
+    qty.addEventListener('input', calc);
+    tier.addEventListener('change', calc);
+    calc();
+  </script>
+</BaseLayout>

@@ -1,0 +1,50 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  url?: string;
+  schema?: 'organization' | 'faq' | 'both';
+}
+const { title = 'JetDigitalPro · Dual-Engine SEO & GEO Content Growth Agency', description = 'Rank #1 on Google and get cited by ChatGPT, Perplexity & Google AI Overviews.', url = 'https://jetdigitalpro.com/', schema = 'organization' } = Astro.props;
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': 'https://jetdigitalpro.com/#organization',
+  name: 'JetDigitalPro',
+  alternateName: 'JDPX Ventures',
+  url: 'https://jetdigitalpro.com/',
+  founder: { '@type': 'Person', name: 'Nell VH' },
+  description: 'Dual-Engine SEO and Generative Engine Optimization (GEO) agency producing human-edited content that ranks on Google and gets cited by ChatGPT, Perplexity, and Google AI Overviews.',
+  areaServed: ['Worldwide', 'Indonesia'],
+  knowsAbout: ['Search Engine Optimization', 'Generative Engine Optimization', 'Topical Authority Mapping', 'White-Label Content Marketing', 'Entity SEO'],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What is Dual-Engine SEO & GEO?', acceptedAnswer: { '@type': 'Answer', text: 'Dual-Engine optimization structures content to rank in traditional Google search results (SEO) while simultaneously optimizing entities, factual density, and direct answers so AI platforms like ChatGPT, Perplexity, and Google AI Overviews cite your brand.' } },
+    { '@type': 'Question', name: 'How does JetDigitalPro prevent AI content penalties?', acceptedAnswer: { '@type': 'Answer', text: 'Every article undergoes a 100% Human Editorial QA process, verifying factual accuracy, primary source citations, brand voice alignment, and semantic depth before delivery.' } },
+  ],
+};
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#090909" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={url} />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="alternate" hreflang="en" href="https://jetdigitalpro.com/" />
+<link rel="alternate" hreflang="id" href="https://www.jasa-seo.id/" />
+{(schema === 'organization' || schema === 'both') && (
+  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+)}
+{(schema === 'faq' || schema === 'both') && (
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+)}

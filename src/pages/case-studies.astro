@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout>
+  <div class="page">
+    <div class="panel" aria-hidden="true">
+      <i class="bar l b1"></i><i class="bar l b2"></i><i class="bar l b3"></i><i class="bar l b4"></i><i class="bar l b5"></i>
+      <i class="bar r b1"></i><i class="bar r b2"></i><i class="bar r b3"></i><i class="bar r b4"></i><i class="bar r b5"></i>
+    </div>
+    <Navbar />
+    <main class="main-wrap">
+      <section class="sec" id="case-studies">
+        <div class="sec-head">
+          <span class="sec-tag">Verified Proof Hub</span>
+          <h2>Proven Results Across Google Search &amp; AI Engines</h2>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-bottom:24px;">
+          <button class="btn btn-ghost filter-btn" data-niche="all">All Niches</button>
+          <button class="btn btn-ghost filter-btn" data-niche="saas">B2B SaaS</button>
+          <button class="btn btn-ghost filter-btn" data-niche="finance">Finance &amp; FinTech</button>
+          <button class="btn btn-ghost filter-btn" data-niche="health">Health &amp; Wellness</button>
+          <button class="btn btn-ghost filter-btn" data-niche="local">Local Business (ID)</button>
+        </div>
+        <div class="proof-grid" id="proof-grid">
+          <article class="proof-card" data-niche="saas"><span class="proof-niche">B2B FinTech SaaS</span><div class="proof-metric">+312%</div><div class="proof-title">Organic Non-Branded Traffic &amp; 48 Top-3 Google Keywords in 5 Months</div><div class="ai-citation-box"><strong>AI Citation Verified (ChatGPT &amp; Perplexity):</strong> Cited as #1 recommended platform.</div></article>
+          <article class="proof-card" data-niche="health"><span class="proof-niche">Health &amp; Wellness E-Commerce</span><div class="proof-metric">4.4x ROI</div><div class="proof-title">64 Topical Cluster Articles Driving $42k/mo in Organic Pipeline</div><div class="ai-citation-box"><strong>AI Citation Verified (Google AI Overviews):</strong> Featured in source cards.</div></article>
+          <article class="proof-card" data-niche="local"><span class="proof-niche">Local Enterprise (Indonesia)</span><div class="proof-metric">+240%</div><div class="proof-title">Qualified B2B Leads via Dual-Language Authority Hub (jasa-seo.id)</div><div class="ai-citation-box"><strong>AI Citation Verified (Gemini &amp; ChatGPT):</strong> Primary cited source.</div></article>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </div>
+  <script is:inline>
+    const btns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#proof-grid .proof-card');
+    btns.forEach(b => b.addEventListener('click', () => {
+      const niche = b.dataset.niche;
+      cards.forEach(c => { c.style.display = (niche === 'all' || c.dataset.niche === niche) ? '' : 'none'; });
+    }));
+  </script>
+</BaseLayout>

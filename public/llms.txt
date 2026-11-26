@@ -1,0 +1,16 @@
+# JetDigitalPro
+
+> JetDigitalPro (a JDPX Ventures company) is a Dual-Engine SEO & GEO (Generative Engine Optimization) content growth agency founded by Nell VH. We produce data-backed, 100% human-edited content engineered to rank on Google and earn citations inside AI search engines including ChatGPT, Perplexity, and Google AI Overviews.
+
+## Core Services & Productized Packages
+- [Hands-Off SEO & GEO Blog Retainer](https://jetdigitalpro.com/services#retainer): End-to-end keyword clustering, entity mapping, AI-assisted drafting, 100% human editorial QA, and direct CMS publishing.
+- [White-Label Content for Agencies](https://jetdigitalpro.com/white-label): NDA-protected bulk content production with 5-7 business day turnaround and unbranded AI citation reports.
+- [Free GEO + SEO Sample Article](https://jetdigitalpro.com/free-sample): Zero-commitment custom sample article written for a prospect's target domain and niche within 48 hours.
+
+## Regional Ecosystem
+- [Global Headquarters (JetDigitalPro)](https://jetdigitalpro.com/): Serving B2B SaaS, FinTech, and digital agencies worldwide.
+- [Indonesia Market Unit (Jasa-SEO.id)](https://www.jasa-seo.id/): Localized SEO & GEO content packages tailored for Indonesian SMEs and startups.
+
+## Knowledge Hub & Proof
+- [Interactive Case Studies](https://jetdigitalpro.com/case-studies): Verified organic traffic growth and AI citation screenshots across SaaS, Finance, and Health niches.
+- [GEO Knowledge Hub & Glossary](https://jetdigitalpro.com/geo-hub): Technical guides on entity-first SEO, Knowledge Graph optimization, and LLM citation tracking.

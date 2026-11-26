@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout>
+  <div class="page">
+    <div class="panel" aria-hidden="true">
+      <i class="bar l b1"></i><i class="bar l b2"></i><i class="bar l b3"></i><i class="bar l b4"></i><i class="bar l b5"></i>
+      <i class="bar r b1"></i><i class="bar r b2"></i><i class="bar r b3"></i><i class="bar r b4"></i><i class="bar r b5"></i>
+    </div>
+    <Navbar />
+    <main class="main-wrap">
+      <section class="sec" id="white-label">
+        <div class="sec-head">
+          <span class="sec-tag">For SEO &amp; Digital Agencies</span>
+          <h2>Your Invisible Content &amp; GEO Fulfillment Engine</h2>
+          <p class="sec-sub">Deliver high-converting SEO &amp; AI-ready articles to your clients without hiring in-house writers.</p>
+        </div>
+        <div class="wl-banner">
+          <div>
+            <h2>Scale Your Agency Fulfillment Without Hiring In-House</h2>
+            <p class="sec-sub">We operate invisibly behind strict NDAs with predictable margins and zero editorial headaches.</p>
+            <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+              <a class="btn btn-lime" href="/free-sample">Apply for Agency Partnership</a>
+              <a class="btn btn-ghost" href="/free-sample">Download White-Label Sample Pack</a>
+            </div>
+          </div>
+          <div class="wl-specs">
+            <div class="wl-stat"><b>100% NDA</b><span>Strict client confidentiality &amp; unbranded docs</span></div>
+            <div class="wl-stat"><b>5–7 Days</b><span>Guaranteed SLA turnaround for client sprints</span></div>
+            <div class="wl-stat"><b>GEO Ready</b><span>AI citation reports you can present to clients</span></div>
+            <div class="wl-stat"><b>2 Regions</b><span>Global English &amp; local Indonesian fulfillment</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>

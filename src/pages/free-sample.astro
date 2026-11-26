@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout>
+  <div class="page">
+    <div class="panel" aria-hidden="true">
+      <i class="bar l b1"></i><i class="bar l b2"></i><i class="bar l b3"></i><i class="bar l b4"></i><i class="bar l b5"></i>
+      <i class="bar r b1"></i><i class="bar r b2"></i><i class="bar r b3"></i><i class="bar r b4"></i><i class="bar r b5"></i>
+    </div>
+    <Navbar />
+    <main class="main-wrap">
+      <section class="sec" id="free-sample">
+        <div class="lead-box">
+          <div>
+            <span class="sec-tag">Zero-Risk Proof of Quality</span>
+            <h2>Claim Your Free Custom GEO + SEO Sample Article</h2>
+            <p class="sec-sub">Experience our editorial depth and AI-citation structure on your own domain before spending a single dollar.</p>
+            <ul class="lead-perks">
+              <li><span>1</span>Custom keyword &amp; AI prompt gap audit for your URL</li>
+              <li><span>2</span>1,200+ word human-edited, publish-ready draft</li>
+              <li><span>3</span>Delivered to your inbox in 2–3 business days</li>
+            </ul>
+          </div>
+          <form class="lead-form" id="lead-form" action="/api/leads/submit" method="post">
+            <div class="f-row">
+              <div class="f-group"><label for="f-name">Your Name *</label><input id="f-name" name="name" type="text" required></div>
+              <div class="f-group"><label for="f-email">Work Email *</label><input id="f-email" name="email" type="email" required></div>
+            </div>
+            <div class="f-group"><label for="f-url">Website Domain URL *</label><input id="f-url" name="domain" type="url" required></div>
+            <div class="f-row">
+              <div class="f-group"><label for="f-segment">Account Profile</label><select id="f-segment" name="segment"><option value="brand">Brand / SaaS / B2B</option><option value="agency">Digital / SEO Agency (White-Label)</option><option value="local-id">UMKM / Bisnis Lokal (Indonesia)</option></select></div>
+              <div class="f-group"><label for="f-topic">Target Topic or Keyword</label><input id="f-topic" name="topic" type="text"></div>
+            </div>
+            <input type="hidden" name="utm_source" id="utm_source">
+            <input type="hidden" name="utm_medium" id="utm_medium">
+            <input type="hidden" name="utm_campaign" id="utm_campaign">
+            <button class="btn btn-lime" type="submit">Send My Free Sample Article →</button>
+            <p class="form-note">No credit card required · Protected by Cloudflare Turnstile &amp; Strict NDA</p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </div>
+  <script is:inline>
+    const params = new URLSearchParams(window.location.search);
+    ['utm_source','utm_medium','utm_campaign'].forEach(k => {
+      const el = document.getElementById(k);
+      if (el) el.value = params.get(k) || '';
+    });
+  </script>
+</BaseLayout>

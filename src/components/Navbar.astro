@@ -1,0 +1,44 @@
+<nav class="nav" aria-label="Primary Navigation">
+  <a class="brand" href="#top" aria-label="JetDigitalPro Home">
+    <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <rect width="40" height="40" rx="10" fill="#83F34D" fill-opacity="0.14" stroke="#83F34D" stroke-width="1.5"/>
+      <path d="M12 24L20 12L28 24H22.5L20 19.5L17.5 24H12Z" fill="#83F34D"/>
+      <circle cx="20" cy="27.5" r="2.2" fill="#FFFFFF"/>
+    </svg>
+    <div class="brand-name">JetDigital<span>Pro</span></div>
+  </a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+  <ul class="links glass">
+    <li><a href="#solutions">Solutions</a></li>
+    <li><a href="#pricing">Pricing &amp; Packages</a></li>
+    <li><a href="#white-label">White-Label</a></li>
+    <li><a href="#case-studies">Case Studies</a></li>
+    <li><a href="#geo-hub">GEO Hub</a></li>
+  </ul>
+  <div class="actions">
+    <a class="region-pill glass" href="#free-sample" title="Global (EN) & Indonesia (jasa-seo.id)">
+      <span class="region-dot"></span>
+      <span>Global (EN) · ID</span>
+    </a>
+    <a class="btn btn-ghost" href="#white-label">Agency Login</a>
+    <a class="btn btn-lime" href="#free-sample">Claim Free Sample</a>
+    <label for="nav-toggle" class="menu-btn" aria-label="Toggle navigation menu">
+      <svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+    </label>
+  </div>
+</nav>
+<script is:inline>
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.querySelector('.nav .links');
+  if (toggle && links) {
+    document.addEventListener('click', (e) => {
+      if (toggle.checked && !links.contains(e.target) && !e.target.closest('.menu-btn')) {
+        toggle.checked = false;
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && toggle.checked) toggle.checked = false;
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { toggle.checked = false; }));
+  }
+</script>

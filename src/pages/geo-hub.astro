@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout>
+  <div class="page">
+    <div class="panel" aria-hidden="true">
+      <i class="bar l b1"></i><i class="bar l b2"></i><i class="bar l b3"></i><i class="bar l b4"></i><i class="bar l b5"></i>
+      <i class="bar r b1"></i><i class="bar r b2"></i><i class="bar r b3"></i><i class="bar r b4"></i><i class="bar r b5"></i>
+    </div>
+    <Navbar />
+    <main class="main-wrap">
+      <section class="sec" id="geo-hub">
+        <div class="sec-head">
+          <span class="sec-tag">GEO Knowledge Hub</span>
+          <h2>Frequently Asked Questions</h2>
+          <p class="sec-sub">Everything you need to know about Dual-Engine SEO, Generative Engine Optimization, and our editorial workflow.</p>
+        </div>
+        <label class="search-bar" for="faq-search">
+          <svg viewBox="0 0 25 25" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><circle cx="10.9" cy="10.9" r="9.8"/><path d="M18.2 18.2 23.6 23.6"/></svg>
+          <span class="sr-only">Search Knowledge Hub</span>
+          <input id="faq-search" type="search" placeholder="Search GEO, AI citations, human editing, white-label NDA...">
+        </label>
+        <div class="acc" id="faq-acc">
+          <details class="acc-item" open data-q="traditional seo geo generative engine optimization"><summary>What is the difference between traditional SEO and GEO (Generative Engine Optimization)?<svg viewBox="0 0 18 18" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 6.8 9 11.2l4.5-4.4"/></svg></summary><div class="acc-body">Traditional SEO focuses on ranking links on Google's search results page. GEO optimizes content structure, entity relationships, statistical citations, and JSON-LD schema so large language models directly quote and recommend your brand in synthesized answers.</div></details>
+          <details class="acc-item" data-q="google spam policies human editing eeat"><summary>How does JetDigitalPro ensure content passes Google Spam policies?<svg viewBox="0 0 18 18" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 6.8 9 11.2l4.5-4.4"/></svg></summary><div class="acc-body">We never publish raw AI text. Every article undergoes deep SERP gap research, original data enrichment, and line-by-line rewriting by niche-specialized human editors to satisfy Google's E-E-A-T guidelines.</div></details>
+          <details class="acc-item" data-q="free sample article offer"><summary>How does the Free Sample Article offer work?<svg viewBox="0 0 18 18" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 6.8 9 11.2l4.5-4.4"/></svg></summary><div class="acc-body">Submit your website URL and target topic in the form. Within 2–3 business days, our editorial team delivers a custom-researched, publication-ready sample article tailored to your domain—completely free with zero obligation.</div></details>
+          <details class="acc-item" data-q="global english indonesia jasa-seo.id"><summary>Do you support both global English markets and local Indonesian businesses?<svg viewBox="0 0 18 18" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 6.8 9 11.2l4.5-4.4"/></svg></summary><div class="acc-body">Yes. Our global team serves North America, Europe, and APAC via JetDigitalPro.com, while our dedicated Indonesian division (jasa-seo.id) delivers native Bahasa Indonesia SEO &amp; GEO campaigns tailored to local search intent.</div></details>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </div>
+  <script is:inline>
+    const input = document.getElementById('faq-search');
+    const items = document.querySelectorAll('#faq-acc .acc-item');
+    input.addEventListener('input', () => {
+      const q = input.value.toLowerCase().trim();
+      items.forEach(it => {
+        const text = (it.dataset.q + ' ' + it.textContent).toLowerCase();
+        it.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+    // one-open-at-a-time accordion
+    items.forEach(it => {
+      it.addEventListener('toggle', () => {
+        if (it.open) items.forEach(o => { if (o !== it) o.open = false; });
+      });
+    });
+  </script>
+</BaseLayout>
